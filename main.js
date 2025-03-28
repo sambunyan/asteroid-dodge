@@ -2,9 +2,9 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
-canvas.width = Math.min(window.innerWidth * 0.9, 1000); 
-canvas.height = Math.min(window.innerHeight * 0.8, 700); 
-
+// Set canvas size
+canvas.width = window.innerWidth - 100;
+canvas.height = window.innerHeight * 0.8;
 
 // Game variables
 let asteroids = [];
@@ -22,15 +22,6 @@ let laserSound = new Audio('sounds/laser-gun.mp3');
 laserSound.volume = 0.5;
 // mute
 let isMuted = false; 
-
-// Resize canvas dynamically
-function resizeCanvas() {
-    canvas.width = Math.min(window.innerWidth * 0.9, 1000); // 90% of window width, max 1000px
-    canvas.height = Math.min(window.innerHeight * 0.8, 700); // 80% of window height, max 700px
-}
-
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas(); 
 
 // Restart button properties
 let restartButton = {
