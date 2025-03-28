@@ -1,44 +1,45 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body settings */
-  body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    display: block;
-    height: 100vh; /* Full viewport height */
-  }
-  
-  /* Game container to hold both the score and the canvas */
-  #game-container {
-    margin: 50px;  /* Adding margin around the whole container */
-    padding: 0;
-    position: relative;
-    height: calc(100vh - 50px);  /* Adjust height of container */
-  }
-  
-  /* Score container style */
-  #score-container {
-    font-size: 24px;
-    color: black;
-    margin-bottom: 20px;  /* Space between the score and canvas */
-    text-align: center;
-  }
-  
-  /* Canvas settings */
-  canvas {
-    background-color: black;
-    display: block;
-    margin: 0 auto;  /* Horizontally center canvas */
-    width: 100%; /* Full width minus margin */
-    height: 80vh !important; /* Force height */
-    margin-bottom: 50px !important;   /* Increase height (now 80% of the viewport height) */
-    cursor: none;
-    
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Game container to hold both the score and the canvas */
+#game-container {
+  position: relative;
+  width: 90vw; /* Use 90% of viewport width */
+  max-width: 1000px; /* Limit max width */
+  height: 90vh; /* Use 90% of viewport height */
+  max-height: 700px; /* Limit max height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Score container style */
+#score-container {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;  /* Space between the score and canvas */
+  text-align: center;
+}
+
+/* Canvas settings */
+canvas {
+  background-color: black;
+  display: block;
+  width: 100%; /* Make canvas fill the container */
+  height: 100%; /* Keep it responsive */
+  cursor: none;
+}
