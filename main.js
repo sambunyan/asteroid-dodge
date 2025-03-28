@@ -115,7 +115,7 @@ function spawnAsteroid() {
     let radius = Math.random() * 30 + 10;
     let x = canvas.width + radius;
     let y = Math.random() * canvas.height;
-    let speed = (Math.random() * 3 + 2) * difficultyMultiplier;
+    let speed = (Math.random() * 6 + 2) * difficultyMultiplier;
 
     asteroids.push({ x, y, radius, speed });
     }
