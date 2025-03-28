@@ -2,9 +2,9 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
-// Set canvas size
-canvas.width = window.innerWidth - 100;
-canvas.height = window.innerHeight * 0.8;
+canvas.width = Math.min(window.innerWidth * 0.9, 1000); 
+canvas.height = Math.min(window.innerHeight * 0.8, 700); 
+
 
 // Game variables
 let asteroids = [];
