@@ -35,10 +35,12 @@ body {
   text-align: center;
 }
 
+/* Canvas settings */
 canvas {
+  background-color: black;
   width: 100vw !important; /* Ensure it takes full width */
   height: 90vh !important; /* Adjust height for GitHub Pages */
   display: block;
   margin: auto;
+  cursor: none;
 }
-
