@@ -40,16 +40,16 @@ let continueButton = {
 
 // Difficulty
 let difficultyMultiplier = 1;
-let spawnInterval = 1000;
+let spawnInterval = 900;
 
 function levelUp() {
-    if (level < 5) {
+    if (level < 6) {
         level++;  // Increase the level
     }
 }
 
 function increaseDifficulty() {
-    if (level < 5) {
+    if (level < 6) {
     difficultyMultiplier += 0.3;  // Gradually increase asteroid speed by 0.1 every time
     spawnInterval = Math.max(500, spawnInterval - 100);  // Decrease spawn interval by 50ms, but ensure it doesn't go below 500ms
     }
@@ -105,16 +105,26 @@ function drawAsteroid(x, y, radius) {
 function spawnAsteroid() {
     if (gameOver || paused) return;
 
-    let asteroidCount = 2;
-    if (level === 2) asteroidCount = 3;
-    else if (level === 3) asteroidCount = 5;
-    else if (level >= 4) asteroidCount = 7;
+    let asteroidCount = 4;
+    if (level === 2) asteroidCount = 5;
+    else if (level === 3) asteroidCount = 7;
+    else if (level >= 4) asteroidCount = 9;
+    else if (level >= 5) asteroidCount = 11;
+    else if (level >= 6) asteroidCount = 13;
     totalAsteroids += asteroidCount;
 
     for(let i = 0; i < asteroidCount; i++) {
     let radius = Math.random() * 30 + 10;
     let x = canvas.width + radius;
-    let y = Math.random() * canvas.height;
+    let y;
+
+        // Randomly decide whether to spawn in the top half or bottom half of the right side
+        if (Math.random() < 0.5) {
+            y = Math.random() * (canvas.height / 2); // Top half
+        } else {
+            y = Math.random() * (canvas.height / 2) + (canvas.height / 2); // Bottom half
+        }
+        
     let speed = (Math.random() * 6 + 2) * difficultyMultiplier;
 
     asteroids.push({ x, y, radius, speed });
