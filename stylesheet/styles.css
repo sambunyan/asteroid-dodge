@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   display: block;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
 }
 
 #imgWrapper {
@@ -36,17 +36,17 @@ body {
 
 /* Game container to hold both the score and the canvas */
 #game-container {
-  margin: 50px;  /* Adding margin around the whole container */
+  margin: 50px; 
   padding: 0;
   position: relative;
-  height: calc(100vh - 50px);  /* Adjust height of container */
+  height: calc(100vh - 50px);  
 }
 
 /* Score container style */
 #score-container {
   font-size: 24px;
   color: black;
-  margin-bottom: 20px;  /* Space between the score and canvas */
+  margin-bottom: 20px; 
   text-align: center;
 }
 

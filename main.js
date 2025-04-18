@@ -330,7 +330,7 @@ document.addEventListener("keydown", (event) => {
             drawPauseScreen();
         } else {
             gameLoop();  
-            spawnAsteroid();  // Resume asteroid spawning
+            spawnAsteroid();
         }
     }
 
